@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- ADDING JS AND CSS VIA EXTERNAL FILES -->
+<html>
+  <head>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- if you remove the `defer` attribribute, it won't work, because this
+        JavaScript expects ` <div id="javascript-will-add-content">` but it loads
+        and executes before that element is available -->
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h2 class="textcenter">Nav Bar</h2>
+        <ul>
+          <li><a href="./index.html">Home Page</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section>
+        <h1 class="textcenter">Hello World!</h1>
+    </section>
+    <section>
+      <h2 class = "textcenter">Introduction</h2>
+      <p>A paragraph</p>
+    </section>
+    <section class="textcenter">
+      <h2>Graph</h2>
+      <img src = "sky.jpeg" alt = "sky">
+    </section>
+    <footer>
+        &copy; Xinyi Ye, 2022
+    </footer>
+  </body>
+</html>
