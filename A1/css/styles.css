@@ -1,8 +1,22 @@
-/* body {
+body {
     background: #FFC0CB;
-    color: #FFF;
-} */
+    color: rgb(169, 54, 204);
+}
 .textcenter{
     text-align: center;
 }
-
+to{
+    font-size:28px;
+    display: block;
+}
+from{
+    font-size:15px;
+    color: blue;
+    display: block;
+}
+p
+{
+    border:5px solid red;
+    font-weight:bold;
+    font-size:150%
+}
