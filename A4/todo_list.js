@@ -2,23 +2,29 @@ function addTask(description, dueTime) {
     console.log("test")
     const orderListElement = document.getElementById("task_list");
     const listItem = document.createElement("li");
-    const span = document.createElement("span");
     const button = document.createElement("button");
-   
-    span.setAttribute("class", "due");
+    listItem.textContent = description;
+    
+    
     button.setAttribute("class", "btn btn-sm btn-outline-danger done");
     button.setAttribute("type", "button");
     button.textContent = "Done";
     button.addEventListener("click", ()=>{
         listItem.remove();
     });
-    listItem.textContent = description;
-    const date = new Date(dueTime);
-    span.textContent = "due " + date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
-    listItem.appendChild(span);
+    if(dueTime) {
+        const span = document.createElement("span");
+        span.setAttribute("class", "due");
+        const date = new Date(dueTime);
+        console.log(date)
+        span.textContent = "due " + date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+        listItem.appendChild(span);
+    }
     listItem.appendChild(button);
     orderListElement.appendChild(listItem);
     descriptionInput.value = "";
+    document.getElementById("duetime_input").value='';
+    document.getElementById("duedate_input").value='';
 }
 
 function dateAndTimeToTimestamp(dateInputElement, timeInputElement) {
@@ -39,6 +45,8 @@ const addTaskButton = document.getElementById("add_task");
 const descriptionInput = document.getElementById("task_description_input");
 const dueDateInput = document.getElementById("duedate_input");
 const dueTimeInput = document.getElementById("duetime_input");
+document.getElementById("duetime_input").value='';
+document.getElementById("duedate_input").value='';
 addTaskButton.addEventListener("click",function (){
     addTask(descriptionInput.value, dateAndTimeToTimestamp(dueDateInput, dueTimeInput));
 });
